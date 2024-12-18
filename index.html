@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحه موبایل</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,22 +24,23 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </header>
+        <video id="videoPlayer" width="640" height="360" controls></video>
         <div class="full-slider">
             <img src="./public/slider.jpg" class="slide" />
             <div>
-                <button class=l>
-                    <!-- svg باید بزاری -->
+                <button id="okButton">
+                    <img id="live-stream" src="./public/icon/play-round-icon.png" alt="">
                 </button>
                 <p class="watch-online">تماشای آنلاین</P>
                 <div class="date">
                     <p>پنجشنبه / ۸ شهریور ۱۴۰۳</p>
                 </div>
-                <div class="q">
+                <div class="team-adjust">
                     <div class="img-size-team">
                         <img src="./public/est.png" alt="ریال مادرید" />
-                        <p >استقلال</p>
+                        <p>استقلال</p>
                     </div>
-                    <div class="s">
+                    <div class="result-number">
                         <p>نتیجه نهایی</p>
                         <p>۳ - ۱</p>
                     </div>
@@ -49,229 +52,120 @@
             </div>
         </div>
         <div>
-            <div  class="buttons-container" >
+            <div class="buttons-container">
                 <button class="game-alert-btn">اعلان‌های بازی</button>
                 <button class="game-predict-btn">پیش‌بینی بازی</button>
             </div>
             <div class="game-info">
                 <div class="info-box">
-                <p>۲۷، ۵۶ بلانکو</p>
-                <p>یزدانی ۹</p>
+                    <p>۲۷، ۵۶ بلانکو</p>
+                    <p>یزدانی ۹</p>
                 </div>
                 <div class="icon-ball"></div>
                 <div class="info-box">
-                <p>۶۳ دابو<p>
-                
+                    <p>۶۳ دابو</p>
                 </div>
-                
             </div>
             <div class="game-results">
-                
-                <h3>نتایج  بازی</h3>
-            
-        </div>
-        
-        
-        <div class="pt-4">
-            <div class="bb">
-                <div class="cc">
-                    <p class="dd">۲۷، ۵۶ بلانکو</p>
-                    <p class="dd">۸۱ رمضانی</p>
-                </div>
-                <div class="ee">
-              
-                </div>
-                <div class="ff">
-                    <p class="gg">۵ یزدانی</p>
-                    <p class="gg">۶۳ دابو</p>
+                <h3>نتایج بازی</h3>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="stat-row">
+                        <div class="stat-value left first">58%</div>
+                        <div class="stat-label-first">درصد مالکیت توپ</div>
+                        <div class="stat-value right first">42%</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-value left">2</div>
+                        <div class="stat-label">موقعیت خطرناک</div>
+                        <div class="stat-value right">3</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-value left">12<span class="sub">(6)</span></div>
+                        <p class="stat-label">تعداد شوت‌ها (درون چارچوب)</p>
+                        <div class="stat-value right">15<span class="sub">(3)</span></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-value left">8</div>
+                        <div class="stat-label">تعداد خطاها</div>
+                        <div class="stat-value right">16</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-value left">4<span class="sub">(0)</span></div>
+                        <div class="stat-label">تعداد کارت زرد (قرمز)</div>
+                        <div class="stat-value right">4<span class="sub">(0)</span></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-value left">0</div>
+                        <div class="stat-label">تعداد آفسایدها</div>
+                        <div class="stat-value right">1</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-value left">6</div>
+                        <div class="stat-label">تعداد کرنرها</div>
+                        <div class="stat-value right">4</div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-            <p class="hh"> </p>
-            <div class="ii">
-                <p class="jj "> درصد مالکیت توپ </p>
-                <div class="jj  ">
-                    <div class="kk">
-                        <p class="ll">۵۸٪</p>
-                    </div>
-                    <div class="mm">
-                        <p class="ll">۴۲٪</p>
-                    </div>
+        <div>
+            <div class="game-results">
+                <h3>بازی‌های رو در روی اخیر</h3>
+            </div>
+            <div class="bgcolor-two"> <!-- رنگ دوم -->
+                <div class="text-date">
+                    <p class="text-date-p">مرداد ۱۴۰۳ </p>
+                    <p class="text-date-p ">لالیگا اسپانیا</p>
                 </div>
-                <div class="pt-2">
-                    <p class="text-white text-center "> موقعیت خطرناک</p>
-                    <div class="nn ">
-                        <div class="bg-[#611dba] rounded-full mt-5  h-[35px] inline-grid w-[60px] ml-2 mr-7  ">
-                            <p class="text-[10px] pt-[9px]  text-white font-bold  ">۲</p>
-                        </div>
-                        <div class="bg-[#444444] rounded-full mt-5 h-[35px] inline-grid w-[60px] ml-20 ">
-                            <p class="text-[10px] pt-[9px] text-white font-bold">۳</p>
+                <div class="bgcolor-tree"> <!-- رنگ سوم -->
+                    <div class="card-result-game">
+                        <p class="number-team">۴</p>
+                        <div class="card-result-game-style">
+                            <p class="text-team">استقلال</p>
+                            <img class="pic-team" src="./public/est.png" alt="Logo Esteghlal">
                         </div>
                     </div>
-                </div>
-                <div class="pt-2">
-                    <p class="text-white text-center "> تعداد شوت ها (درون چهار چوب)</p>
-                    <div class="nn  ">
-                        <div class="oo  ">
-                            <p class="pp  ">۱۵(۳)</p>
-                        </div>
-                        <div class="qq ">
-                            <p class="text-[10px] pt-[9px] text-white font-bold">۱۲(6)</p>
+                    <div class="card-result-game">
+                        <p class="number-team">۱</p>
+                        <div class="card-result-game-style">
+                            <p class="text-team">سپاهان</p>
+                            <img class="pic-team" src="./public/sep.png" alt="Logo Sepahan">
                         </div>
                     </div>
                 </div>
-                <div class="pt-2">
-                    <p class="text-white text-center "> تعداد خطاها</p>
-                    <div class="text-center  ">
-                        <div class="bg-[#611dba] rounded-full mt-5  h-[35px] inline-grid w-[60px] ml-2 mr-7  ">
-                            <p class="text-[10px] pt-[9px]  text-white font-bold  ">۸</p>
-                        </div>
-                        <div class="bg-[#444444] rounded-full mt-5 h-[35px] inline-grid w-[60px] ml-20 ">
-                            <p class="text-[10px] pt-[9px] text-white font-bold">۱۶</p>
+                <div class="text-date">
+                    <p class="text-date-p">مرداد ۱۴۰۳ </p>
+                    <p class="text-date-p ">لالیگا اسپانیا</p>
+                </div>
+                <div class="bgcolor-tree"> <!-- رنگ سوم -->
+                    <div class="card-result-game">
+                        <p class="number-team">۴</p>
+                        <div class="card-result-game-style">
+                            <p class="text-team">استقلال</p>
+                            <img class="pic-team" src="./public/est.png" alt="Logo Esteghlal">
                         </div>
                     </div>
-                </div>
-                <div class="pt-2">
-                    <p class="text-white text-center "> تعداد کارت زرد(قرمز) </p>
-                    <div class="text-center  ">
-                        <div class="bg-[#444444] rounded-full mt-5  h-[35px] inline-grid w-[60px] ml-2 mr-7  ">
-                            <p class="pp  ">۲(۰)</p>
-                        </div>
-                        <div class="bg-[#ff7411] rounded-full mt-5 h-[35px] inline-grid w-[60px] ml-20 ">
-                            <p class="pp">۴(۰)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pt-2">
-                    <p class="text-white text-center "> تعداد افساید ها</p>
-                    <div class="text-center  ">
-                        <div class="bg-[#611dba] rounded-full mt-5  h-[35px] inline-grid w-[60px] ml-2 mr-7  ">
-                            <p class="pp  ">۰
-                            </p>
-                        </div>
-                        <div class="qq ">
-                            <p class="pp">۱</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pt-2">
-                    <p class="rr "> تعداد کرنر ها</p>
-                    <div class="ss  ">
-                        <div class="tt  ">
-                            <p class="uu  ">
-                                ۶</p>
-                        </div>
-                        <div class="vv ">
-                            <p class="ww">
-                                ۴</p>
+                    <div class="card-result-game">
+                        <p class="number-team">۱</p>
+                        <div class="card-result-game-style">
+                            <p class="text-team">سپاهان</p>
+                            <img class="pic-team" src="./public/sep.png" alt="Logo Sepahan">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="pt-2">
-            <div class="p-3 ">
-                <h2 class="xx">
-                    بازی‌های رو در روی اخیر</h2>
-                <ul class="yy">
-                </ul>
+        <div>
+            <div class="game-results">
+                <h3>جدول رقابت ها</h3>
             </div>
-            <div class="zz"> <!-- رنگ دوم -->
-                <div class="aaa">
-                    <p class="bbb ">مرداد ۱۴۰۳ </p>
-                    <p class="bbb ">لالیگا اسپانیا</p>
-                </div>
-                <div class="ccc"> <!-- رنگ سوم -->
-                    <div class="ddd">
-                        <p class="eee">۴</p>
-                        <div class="fff">
-                            <p class="ggg">استقلال</p>
-                            <img src="./public/est.png" alt="Logo Esteghlal" class="h-7 w-7 ml-2">
-                        </div>
+            <div class="container">
+                <div class="result-card card">
+                    <div class="table-head">
+                        <p class="table-head-p">لیگ برتر خلیج فارس</p>
                     </div>
-                    <div class="hhh">
-                        <p class="iii">۱</p>
-                        <div class="fff">
-                            <p class="ggg">سپاهان</p>
-                            <img src="./public/sep.png" alt="Logo Sepahan" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                </div>
-                <div class="kkk">
-                    <p class="lll  ">۲۴ مهر</p>
-                    <p class="ooo ">جام حذفی اسپانیا</p>
-                </div>
-                <div class="ccc">
-                    <div class="ddd">
-                        <p class="eee">۰</p>
-                        <div class="fff">
-                            <p class="ggg">استقلال</p>
-                            <img src="./public/est.png" alt="Logo Esteghlal" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                    <div class="hhh">
-                        <p class="eee">۳</p>
-                        <div class="fff">
-                            <p class="ggg">سپاهان</p>
-                            <img src="./public/sep.png" alt="Logo Sepahan" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                </div>
-                <div class="jjj">
-                    <p class="lll  ">۹ اسفند</p>
-                    <p class="ooo ">جام حذفی اسپانیا</p>
-                </div>
-                <div class="ccc">
-                    <div class="ddd">
-                        <p class="eee">۰</p>
-                        <div class="fff">
-                            <p class="ggg">استقلال</p>
-                            <img src="./public/est.png" alt="Logo Esteghlal" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                    <div class="hhh">
-                        <p class="eee">۳</p>
-                        <div class="fff">
-                            <p class="ggg">سپاهان</p>
-                            <img src="./public/sep.png" alt="Logo Sepahan" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                </div>
-                <div class="jjj">
-                    <p class="lll  ">۱۸ فروردین</p>
-                    <p class="ooo">جام حذفی اسپانیا</p>
-                </div>
-                <div class="bg-[#444444] p-2  rounded-lg w-full max-w-[250px] ml-[10px]">
-                    <div class="ddd">
-                        <p class="eee">۰</p>
-                        <div class="fff">
-                            <p class="ggg">استقلال</p>
-                            <img src="./public/est.png" alt="Logo Esteghlal" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                    <div class="hhh">
-                        <p class="eee">۳</p>
-                        <div class="fff">
-                            <p class="ggg">سپاهان</p>
-                            <img src="./public/sep.png" alt="Logo Sepahan" class="h-7 w-7 ml-2">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="qqq">
-            <div class="rrr ">
-                <h2 class="ppp">جدول رقابت ها</h2>
-            </div>
-            <div class="sss">
-                <div class="ttt">
-                    <div class="uuu">
-                        <p class="vvv ">لیگ برتر خلیج فارس</p>
-                    </div>
-                </div>
-                <div class="www ">
-                    <div class="xxx">
+                    <div class="result-table-game">
                         <table>
                             <thead>
                                 <tr>
@@ -288,186 +182,126 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="rounded-s-lg">9</td>
+                                    <td class="first-td-radius">9</td>
                                     <td>3</td>
                                     <td>0</td>
                                     <td>0</td>
                                     <td>+9</td>
                                     <td>9</td>
                                     <td>9</td>
-                                    <td class="dddd ">
-                                        <img src="./public/est.png" alt="Logo" />
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
                                     </td>
-                                    <td class="bbbb">1</td>
+                                    <td class="last-td-radius">1</td>
                                 </tr>
-                                <tr">
-                                    <td class=" rounded-s-lg">9</td>
+                                <tr>
+                                    <td class="first-td-radius">9</td>
                                     <td>3</td>
                                     <td>0</td>
                                     <td>0</td>
                                     <td>+9</td>
                                     <td>9</td>
                                     <td>9</td>
-                                    <td class="dddd ">
-                                        <img src="./public/est.png" alt="Logo" />
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
                                     </td>
-                                    <td class=" rounded-e-lg">2</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">3</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">4</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">5</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">6</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">7</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">8</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class=" rounded-e-lg">9</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=" rounded-s-lg">9</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>+9</td>
-                                        <td>9</td>
-                                        <td>9</td>
-                                        <td class="dddd ">
-                                            <img src="./public/est.png" alt="Logo" />
-                                        </td>
-                                        <td class="py-2 px-1 rounded-e-lg">10</td>
-                                    </tr>
+                                    <td class="last-td-radius">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-td-radius">9</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>+9</td>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
+                                    </td>
+                                    <td class="last-td-radius">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-td-radius">9</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>+9</td>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
+                                    </td>
+                                    <td class="last-td-radius">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-td-radius">9</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>+9</td>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
+                                    </td>
+                                    <td class="last-td-radius">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-td-radius">9</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>+9</td>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
+                                    </td>
+                                    <td class="last-td-radius">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-td-radius">9</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>+9</td>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>
+                                        <img src="./public/est.png" alt="Logo" class="result-table-img" />
+                                    </td>
+                                    <td class="last-td-radius">1</td>
+                                </tr>
                             </tbody>
                         </table>
-                        <div
-                            class="justify-center items-center text-center text-white text-sm mt-3 p-1 bg-[#595959] rounded-lg ">
-                            <p>مشاهده جدول کامل</p>
-                        </div>
+                    </div>
+                    <div class="table-head-center">
+                        <p class="table-head-p">مشاهده کامل جدول</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!--  start  -->
-        <div class="flex justify-between items-center mb-4">
-            <p class="text-white text-[10px] ml-5  ">مشاهده همه</p>
-            <p class="text-white text-[13px] mr-4 p-4 font-bold ">پخش زنده بازی ها</p>
+        <div class="live-card">
+            <p class="live-card-text">مشاهده همه</p>
+            <p class="live-card-text">پخش زنده بازی ها</p>
         </div>
-        <div class="w-full max-w-3xl overflow-hidden relative rounded-lg p-9">
-            <!-- Slider Container -->
-            <div id="slider" class="flex transition-transform duration-500 no-select cursor-grab gap-4">
-                <!-- Slide 1 -->
-                <div class="w-full flex-shrink-0">
-                    <img src="./public/team.png" alt="Slide 1" class="w-full rounded-[15px]">
-                    <div class="text-center">
-                        <p class="text-[10px] pt-2 text-white">پخش زنده فوتبال استقلال - سپاهان</p>
-                        <p class="text-[8px] pt-1 text-white">لیگ برتر ایران</p>
-                    </div>
-                </div>
-                <div class="w-full flex-shrink-0">
-                    <img src="./public/team.png" alt="Slide 1" class="w-full rounded-[15px]">
-                    <div class="text-center">
-                        <p class="text-[10px] pt-2 text-white">پخش زنده فوتبال استقلال - سپاهان</p>
-                        <p class="text-[8px] pt-1 text-white">لیگ برتر ایران</p>
-                    </div>
-                </div>
-                <div class="w-full flex-shrink-0">
-                    <img src="./public/team.png" alt="Slide 1" class="w-full rounded-[15px]">
-                    <div class="text-center">
-                        <p class="text-[10px] pt-2 text-white">پخش زنده فوتبال استقلال - سپاهان</p>
-                        <p class="text-[8px] pt-1 text-white">لیگ برتر ایران</p>
-                    </div>
-                </div>
-                <div class="w-full flex-shrink-0">
-                    <img src="./public/team.png" alt="Slide 1" class="w-full rounded-[15px]">
-                    <div class="text-center">
-                        <p class="text-[10px] pt-2 text-white">پخش زنده فوتبال استقلال - سپاهان</p>
-                        <p class="text-[8px] pt-1 text-white">لیگ برتر ایران</p>
-                    </div>
-                </div>
-            </div>
+        <div class="scroll-container">
+            <ul class="scroll-list">
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+                <li class="item"><img src="./public/team.png" alt="" class="live-img"></li>
+            </ul>
+            <p class="text-slider"> پخش زنده فوتبال استقلال-سپاهان </p>
+            <p class="text-slider"> لیگ برتر ایران </p>
         </div>
-        <p class="text-white text-right mr-1 p-4 ">نظرات کاربران</p>
-        <div class="ml-4  pt-30   rounded-lg  w-full max-w-[270px]  bg-[#303030]">
+        <!-- <p class=" ">نظرات کاربران</p>
+        <div class="">
             <textarea placeholder="نظر خود را بنویسید..."
                 class="w-[200px] mt-4  ml-10 h-[100px] p-3 rounded-lg text-white bg-[#222222] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 text-right "></textarea>
             <div class="flex items-center justify-end pt-2 ">
@@ -483,12 +317,34 @@
                     ارسال
                 </button>
             </div>
-        </div>
-        <!-- <footer class="fixed bottom-0 w-full max-w-[300px] bg-gray-800 text-white text-center py-1">
-            <p>این یک فوتر ثابت است و همیشه پایین صفحه قرار دارد.</p>
-        </footer> -->
+        </div> -->
+        <footer>
+            <div class="footer-icon">
+                <div class="footer-icon-text-img">
+                    <img src="./public/icon/column-chart-icon.png" alt="">
+                    <p>جدول ها</p>
+                </div>
+                <div class="footer-icon-text-img">
+                    <img src="./public/icon/list-round-bullet-icon.png" alt="">
+                    <p>دسته بندی</p>
+                </div>
+                <div class="footer-icon-text-img">
+                    <img src="./public/icon/search-icon.png" alt="">
+                    <p>جستجو</p>
+                </div>
+                <div class="footer-icon-text-img">
+                    <img src="./public/icon/champion-winner-icon.png" alt="">
+                    <p>رقابت</p>
+                </div>
+                <div class="footer-icon-text-img">
+                    <img src="./public/icon/home-inspection-icon.png" alt="">
+                    <p>خانه</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 <script src="./slider.js"> </script>
+<script src="./stream.js"> </script>
 
 </html>
